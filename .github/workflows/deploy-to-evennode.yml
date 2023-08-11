@@ -28,11 +28,11 @@ jobs:
       run: |
         rm -rf .git/
         git init
-       
+        git config --global user.email "${{ secrets.GIT_EMAIL }}"
+        git config --global user.name "${{ secrets.GIT_NAME }}"
         git remote add evennode ${{ secrets.EVENNODE_REPO_URL }}
         
         git commit -m "initial commit"
-        git config --global user.email "${{ secrets.GIT_EMAIL }}"
-        git config --global user.name "${{ secrets.GIT_NAME }}"
+        
         git config advice.setUpstreamFailure false
         git push evennode +master  --force
