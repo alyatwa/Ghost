@@ -31,4 +31,5 @@ jobs:
         git config --global user.name "${{ secrets.GIT_NAME }}"
         git config advice.setUpstreamFailure false
         git commit -m "initial commit"
+        git branch -u origin/master
         git push evennode +master  --force
