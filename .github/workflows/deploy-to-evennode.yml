@@ -2,10 +2,12 @@
 
 name: Deploy to EvenNode
 
+
 on:
   push:
     branches: [ master ]
-
+  workflow_dispatch: 
+ 
 jobs:
   Deploy:
     runs-on: ubuntu-latest
